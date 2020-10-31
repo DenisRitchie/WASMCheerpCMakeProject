@@ -1,0 +1,65 @@
+{
+    "files.associations": {
+        "string": "cpp",
+        "vector": "cpp",
+        "type_traits": "cpp",
+        "__config": "cpp",
+        "chrono": "cpp",
+        "regex": "cpp",
+        "cstdio": "cpp",
+        "functional": "cpp",
+        "__functional_base": "cpp",
+        "__locale": "cpp",
+        "algorithm": "cpp"
+    },
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.autoIndent": "advanced",
+    "workbench.editor.tabSizing": "fit",
+    "C_Cpp.experimentalFeatures": "Enabled",
+    "C_Cpp.default.cStandard": "gnu17",
+    "C_Cpp.default.cppStandard": "gnu++20",
+    "C_Cpp.default.intelliSenseMode": "clang-x64",
+    "C_Cpp.default.systemIncludePath": [
+        "C:/cheerp/include/",
+        "C:/cheerp/include/c++/v1/",
+        "C:/cheerp/include/client/",
+        "C:/cheerp/lib/clang/6.0.0/include/",
+    ],
+    "C_Cpp.default.configurationProvider": "go2sh.cmake-integration",
+    "C_Cpp.default.compilerPath": "C:/cheerp/bin/clang++.exe",
+    "C_Cpp.default.compilerArgs": [
+        "-O3",
+        "-target",
+        "cheerp-wasm",
+        "-cheerp-linear-heap-size=128"
+    ],
+    "C_Cpp.formatting": "vcFormat",
+    "C_Cpp.intelliSenseCacheSize": 10240,
+    "code-runner.defaultLanguage": "cpp",
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.executorMap": {
+        "cpp": "cd $workspaceRoot/build && cmake --build $workspaceRoot/build --config Debug --target all -- -j 6",
+    },
+    "files.watcherExclude": {
+        "**/build/*/**": true,
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true
+    },
+    "filewatcher.autoClearConsole": false,
+    "filewatcher.commands": [
+        {
+            "match": "\\.cpp*",
+            "isAsync": false,
+            "cmd": "cmake --build ${workspaceRoot}/build --config Debug --target all -- -j 6",
+            "event": "onFileChange"
+        }
+    ],
+    "cmake.configureArgs": [],
+    "cmake.configureSettings": {
+        "CMAKE_INSTALL_PREFIX": "c:/Projects/CheerpCMake/publish"
+    },
+}
