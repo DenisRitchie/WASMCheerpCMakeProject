@@ -1,16 +1,25 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(CheerpCMake VERSION 0.1.0)
+
+# if(POLICY CMP0010)
+#   cmake_policy(SET CMP0010 NEW)
+# endif()
+
+project(CheerpCMakeProject
+  VERSION      0.1.0.0
+  DESCRIPTION  "Cheerp project configuration for Visual Studio Code with the C/C++ Language"
+  HOMEPAGE_URL https://github.com/DenisRitchie/WASMCheerpCMakeProject
+  LANGUAGES    C CXX)
 
 # include(CTest)
 # enable_testing()
 
-add_executable(CheerpCMake
+add_executable(${CMAKE_PROJECT_NAME}
   includes/helpers.hpp
   main.cpp
 )
 
 target_compile_options(
-  CheerpCMake
+  ${CMAKE_PROJECT_NAME}
     PUBLIC -Os
     PUBLIC -std=gnu++2a
     # PUBLIC -cheerp-no-credits
@@ -23,17 +32,29 @@ target_compile_options(
 # set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 # include(CPack)
 
+configure_file(templates/index.cpphtml index.html @ONLY)
+
+# file(
+#   GENERATE OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/index.html
+#   INPUT ${CMAKE_CURRENT_SOURCE_DIR}/templates/index.html
+# )
+
 file(
-  GENERATE OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/index.html
-  INPUT ${CMAKE_CURRENT_SOURCE_DIR}/templates/index.html
+  GENERATE OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/index.css
+  INPUT ${CMAKE_CURRENT_SOURCE_DIR}/templates/index.css
 )
 
 install(
-  TARGETS CheerpCMake
+  TARGETS ${CMAKE_PROJECT_NAME}
   DESTINATION bin
 )
 
 install(
-  FILES ${CMAKE_CURRENT_SOURCE_DIR}/templates/index.html
+  FILES ${CMAKE_CURRENT_BINARY_DIR}/index.html
+  DESTINATION bin
+)
+
+install(
+  FILES ${CMAKE_CURRENT_BINARY_DIR}/index.css
   DESTINATION bin
 )
