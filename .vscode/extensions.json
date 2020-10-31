@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "vscode-icons-team.vscode-icons",         // vscode-icons - VSCode Icons Team
+    "twxs.cmake",                             // CMake - twxs
+    "ms-vscode.cmake-tools",                  // CMake Tools - Microsoft
+    "eamodio.gitlens",                        // GitLens — Git supercharged - Eric Amodio
+    "oderwat.indent-rainbow",                 // indent-rainbow - oderwat
+    "ritwickdey.liveserver",                  // Live Server - Ritwick Dey
+    "cschlosser.doxdocgen",                   // Doxygen Documentation Generator - Christoph Schlosser
+    "formulahendry.code-runner",              // Code Runner - Jun Han
+    "visualstudioexptteam.vscodeintellicode", // Visual Studio IntelliCode - Microsoft
+    "ms-vscode.cpptools",                     // C/C++ - Microsoft
+  ]
+}

@@ -113,5 +113,26 @@ https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%
 
 
 
+CMake Tools Settings References
+https://github.com/microsoft/vscode-cmake-tools/blob/master/docs/kits.md
+https://github.com/microsoft/vscode-cmake-tools/blob/master/docs/cmake-settings.md#variable-substitution
+https://github.com/microsoft/vscode-cmake-tools/blob/master/docs/variants.md
+https://github.com/microsoft/vscode-cmake-tools/blob/master/docs/debug-launch.md#debug-using-a-launchjson-file
+https://github.com/microsoft/vscode-cmake-tools/blob/master/docs/configure.md
 
 
+CMake References
+https://cmake.org/cmake/help/latest/command/project.html?highlight=project
+https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html#cross-compiling-toolchain
+https://www.internalpointers.com/post/modern-cmake-beginner-introduction
+https://cmake.org/cmake/help/v3.19/manual/cmake-policies.7.html#manual:cmake-policies(7)
+https://www.systutorials.com/docs/linux/man/7-cmake-language/
+https://cmake.org/cmake/help/latest/guide/tutorial/index.html
+
+
+Visual Studio Code
+https://code.visualstudio.com/docs/getstarted/tips-and-tricks
+https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions
+https://code.visualstudio.com/docs/editor/variables-reference
+https://code.visualstudio.com/docs/editor/multi-root-workspaces
+https://stackoverflow.com/questions/44629890/what-is-a-workspace-in-visual-studio-code

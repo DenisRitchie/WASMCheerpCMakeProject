@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.cpphtml": "html",
         "string": "cpp",
         "vector": "cpp",
         "type_traits": "cpp",
@@ -15,6 +16,7 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.autoIndent": "advanced",
+    "editor.renderWhitespace": "all",
     "workbench.editor.tabSizing": "fit",
     "C_Cpp.experimentalFeatures": "Enabled",
     "C_Cpp.default.cStandard": "gnu17",
@@ -58,8 +60,10 @@
             "event": "onFileChange"
         }
     ],
+    "cmake.buildToolArgs": [],
+    "cmake.buildArgs": [],
     "cmake.configureArgs": [],
     "cmake.configureSettings": {
-        "CMAKE_INSTALL_PREFIX": "c:/Projects/CheerpCMake/publish"
-    },
+        "CMAKE_INSTALL_PREFIX": "${workspaceFolder}/publish"
+    }
 }
