@@ -1,54 +1,44 @@
 #include <cheerp/client.h>
 #include <cheerp/clientlib.h>
-#include "includes/helpers.hpp"
+
+#include "includes/client2.hpp"
+#include "includes/events.hpp"
+#include "includes/dom.hpp"
+#include "includes/dom_ext.hpp"
+
+#include <cstdio>
+#include <cstdlib>
 #include <string>
 #include <sstream>
-#include <cstdio>
 #include <functional>
-
-namespace VanillaJS::DOMEventConstants
-{
-  constexpr const wchar_t *DOMContentLoaded = L"DOMContentLoaded";
-}
 
 [[cheerp::genericjs]]
 void OnDOMContentLoaded([[maybe_unused]] client::MutationEvent* EventInfo)
 {
+  using namespace client;
   using namespace VanillaJS;
-  auto body = (HTMLBodyElement*)document.get_body();
 
-  // Function *function;
-  // __asm__("function(value){ alert(value); }" : "=r"(function));
+  HTMLBody body = GetBody();
+  auto text_node = body.AppendTextNode(L"Texto de prueba");
+  text_node->appendData(L", otros datos añadidos");
 
-  EventListener* function = cheerp::Callback([](String const& msg)
-  {
-    EventListener* inner = cheerp::Callback([]
-    {
-    });
+  auto h1 = body.AppendChild<client::HTMLHeadingElement>(L"h1") | to_html_wrapper;
+  h1->set_textContent(L"Este es el contenido del h1");
 
-    console.log(msg);
-    return inner;
-  });
-
-  body->appendChild(document.createElement(L"h1"));
-  body->get_lastChild()->set_textContent(L"Hello, World!");
-  reinterpret_cast<void(*)(String const&)>(function)(L"Hello, World!");
+  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+  auto ejemplo = body.AppendChild<client::HTMLAnchorElement>(L"a") | to_html_wrapper;
+  ejemplo->set_href(L"examples/events/Event_PreventDefault");
+  ejemplo->set_target(L"_blank");
+  ejemplo->set_textContent(L"Dale Click para que veas el ejemplo #1");
 }
 
 int main()
 {
   using namespace client;
-  client::document.addEventListener(
-    VanillaJS::DOMEventConstants::DOMContentLoaded,
-    cheerp::Callback(OnDOMContentLoaded));
+  using namespace VanillaJS;
 
-  // client::Object *obj;
-  // __asm__("Object.create(%1.prototype)" : "=r"(obj) : "r"(CustomHtml));
-  // obj->set_("Property", 30);
-  // __asm__("console.log(%0)" : : "r"(obj));
-
-  return 0;
+  document.addEventListener(VanillaJS::Events::DOMMutation::DOMContentLoaded, cheerp::Callback(OnDOMContentLoaded));
+  return EXIT_SUCCESS;
 }
 
 // https://caniuse.com/
-

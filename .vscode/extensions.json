@@ -9,6 +9,8 @@
     "cschlosser.doxdocgen",                   // Doxygen Documentation Generator - Christoph Schlosser
     "formulahendry.code-runner",              // Code Runner - Jun Han
     "visualstudioexptteam.vscodeintellicode", // Visual Studio IntelliCode - Microsoft
+    "wayou.vscode-todo-highlight",            // TODO Highlight - Wayou Liu
+    "Gruntfuggly.todo-tree",                  // Todo Tree - Gruntfuggly
     "ms-vscode.cpptools",                     // C/C++ - Microsoft
   ]
 }

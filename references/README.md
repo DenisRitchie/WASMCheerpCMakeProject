@@ -130,6 +130,12 @@ https://www.systutorials.com/docs/linux/man/7-cmake-language/
 https://cmake.org/cmake/help/latest/guide/tutorial/index.html
 
 
+CMake Best Practices
+https://fujii.github.io/2015/10/10/cmake-best-practice/
+http://techminded.net/blog/modular-c-projects-with-cmake.html
+
+
+
 Visual Studio Code
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks
 https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions

@@ -1,17 +1,28 @@
 {
     "files.associations": {
         "*.cpphtml": "html",
+        "__functional_base": "cpp",
+        "__config": "cpp",
+        "__locale": "cpp",
         "string": "cpp",
         "vector": "cpp",
         "type_traits": "cpp",
-        "__config": "cpp",
         "chrono": "cpp",
         "regex": "cpp",
         "cstdio": "cpp",
         "functional": "cpp",
-        "__functional_base": "cpp",
-        "__locale": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "cstdlib": "cpp",
+        "sstream": "cpp",
+        "fstream": "cpp",
+        "streambuf": "cpp",
+        "ios": "cpp",
+        "cinttypes": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "utility": "cpp",
+        "iosfwd": "cpp",
+        "memory": "cpp"
     },
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
@@ -21,6 +32,9 @@
     "C_Cpp.experimentalFeatures": "Enabled",
     "C_Cpp.default.cStandard": "gnu17",
     "C_Cpp.default.cppStandard": "gnu++20",
+    "C_Cpp.default.defines": [
+        "__SIZE_TYPE__=unsigned long"
+    ],
     "C_Cpp.default.intelliSenseMode": "clang-x64",
     "C_Cpp.default.systemIncludePath": [
         "C:/cheerp/include/",

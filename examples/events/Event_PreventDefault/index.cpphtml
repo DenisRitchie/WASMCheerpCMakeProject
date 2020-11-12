@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prevent Default</title>
+</head>
+<body>
+  <p>Haga clic en la caja de check.</p>
+  <form>
+    <label for="check-box-id">CheckBox:</label>
+    <input type="checkbox" id="check-box-id" />
+  </form>
+  <div id="output-box"></div>
+  <script src="@PROJECT_NAME@.js"></script>
+</body>
+</html>
