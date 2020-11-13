@@ -1,8 +1,10 @@
 #ifndef __CHEERPS_VANILLAJS_DOM_PIPES_HPP__
 #define __CHEERPS_VANILLAJS_DOM_PIPES_HPP__
 
+#include <iostream>
 #include <sstream>
 #include <string>
+#include <memory>
 #include "dom.hpp"
 
 namespace [[cheerp::genericjs]] VanillaJS
@@ -21,6 +23,24 @@ namespace [[cheerp::genericjs]] VanillaJS
 
   struct 
   {
+    inline client::String* operator()(std::wostream &out) const noexcept
+    {
+      using iterator_t = std::istreambuf_iterator<std::wostream::char_type, std::wostream::traits_type>;
+
+      iterator_t in(out.rdbuf()), eof;
+      client::String* data = new client::String();
+
+      for(; in != eof ; ++in)
+        data = data->concat(*client::String::fromCharCode(*in));
+
+      return data;
+    }
+
+    inline client::String* operator()(const std::wstringstream &data) const noexcept
+    {
+      return new client::String(data.str().c_str());
+    }
+
     inline client::String* operator()(const std::wostringstream &data) const noexcept
     {
       return new client::String(data.str().c_str());
@@ -42,17 +62,23 @@ namespace [[cheerp::genericjs]] VanillaJS
     return new client::String(text);
   }
 
-  inline client::String* operator+(const client::String &left, const client::String &right) noexcept
+  inline client::String* operator+(const client::String &left, client::Any right) noexcept
   {
     client::String *text;
-    __asm__("%1 + %2" : "=r"(text) : "r"(&left), "r"(&right));
+    __asm__("%1 + %2" : "=r"(text) : "r"(&left), "r"(right));
     return text;
   }
 
-  client::String* operator+=(client::String &object, const client::String &data) noexcept
+  inline client::String* operator+(client::Any left, const client::String &right) noexcept
   {
-    __asm__("%0 += %1" : : "r"(&object), "r"(&data));
-    return &object;
+    client::String *text;
+    __asm__("%1 + %2" : "=r"(text) : "r"(left), "r"(&right));
+    return text;
+  }
+
+  client::String* operator+=(client::String &object, client::Any data) noexcept
+  {
+    return ({ __asm__("%0 += %1" : : "r"(&object), "r"(data)); &object; });
   }
 }
 

@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="index.css" rel="stylesheet" type="text/css" />
   <title>Prevent Default</title>
 </head>
+
 <body>
-  <p>Haga clic en la caja de check.</p>
-  <form>
-    <label for="check-box-id">CheckBox:</label>
-    <input type="checkbox" id="check-box-id" />
-  </form>
-  <div id="output-box"></div>
+  <div id="test-1">
+    <p>Haga clic en la caja de check.</p>
+    <form>
+      <label for="check-box-id">CheckBox:</label>
+      <input type="checkbox" id="check-box-id" />
+    </form>
+    <div id="output-box"></div>
+  </div>
+
+  <div id="test-2" class="container">
+    <p>Por favor, escriba su nombre usando sólamente con letras minúsculas</p>
+    <form>
+      <input type="text" id="my-textbox" autocomplete="off" />
+    </form>
+  </div>
+
   <script src="@PROJECT_NAME@.js"></script>
 </body>
+
 </html>

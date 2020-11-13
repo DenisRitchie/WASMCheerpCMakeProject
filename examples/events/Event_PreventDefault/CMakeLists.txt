@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.18.4)
 # http://johnnado.com/cmake-directory-variables/
 # https://cmake.org/cmake/help/latest/command/project.html
 # https://stackoverflow.com/questions/38938315/difference-between-cmake-project-name-and-project-name
-project(Example_Events_Event_PreventDefault
+project(EventPreventDefault
   VERSION   1.0.0.0
   LANGUAGES C CXX)
 
@@ -33,3 +33,9 @@ configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/index.cpphtml
   index.html @ONLY
 )
+
+file(
+  GENERATE OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/index.css
+  INPUT ${CMAKE_CURRENT_SOURCE_DIR}/index.css
+)
+
