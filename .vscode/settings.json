@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.cpphtml": "html",
+        "*.cmake.in": "cmake",
         "__bit_reference": "cpp",
         "__functional_base": "cpp",
         "__functional_base_03": "cpp",
@@ -71,7 +72,7 @@
         "C:/cheerp/include/",
         "C:/cheerp/include/c++/v1/",
         "C:/cheerp/include/client/",
-        "C:/cheerp/lib/clang/6.0.0/include/",
+        "C:/cheerp/lib/clang/9.0.0/include/",
     ],
     "C_Cpp.default.configurationProvider": "go2sh.cmake-integration",
     "C_Cpp.default.compilerPath": "C:/cheerp/bin/clang++.exe",

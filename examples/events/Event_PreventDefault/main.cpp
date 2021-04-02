@@ -17,7 +17,7 @@ void Test1()
   {
     *document.getElementById(L"output-box")->get_innerHTML() += DOMString(
       std::wostringstream()
-        << L"#" << ++index 
+        << L"#" << ++index
         << L" - ¡Lo siento!, <code>PreventDefault</code> ¡No te dejaré aprobar esto!<br/>"
     );
     event->preventDefault();
@@ -37,8 +37,6 @@ void Test2()
 
   auto DisplayWarning = [&](const String &message)
   {
-    console.log(L"Entrando al warning y este es %s", message);
-
     warning_box->set_innerHTML(message);
 
     if (GetBody()->contains(warning_box))
